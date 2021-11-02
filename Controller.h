@@ -51,12 +51,9 @@ namespace Controller
 
 
 	#define XINPUT_GAMEPAD_TRIGGER_THRESHOLD    30
-
-	void Controller()
+	XboxController* Player1 = new XboxController(1);
+	void POC()
 	{
-		XboxController* Player1;
-		Player1 = new XboxController(1);
-
 		while (true)
 		{
 			if (Player1->CheckConnection())
@@ -68,9 +65,25 @@ namespace Controller
 				if (Player1->GetControllerState().Gamepad.bLeftTrigger)
 				{
 					std::cout << "	[+] Left Trigger Pulled\n";
-				
+
 				}
 			}
 		}
+	}
+	bool IsPressingRightTrigger()
+	{
+		if (Player1->GetControllerState().Gamepad.bRightTrigger)
+		{
+					return true;
+		}
+		return false;
+	}
+	bool IsPressingLeftTrigger()
+	{
+		if (Player1->GetControllerState().Gamepad.bLeftTrigger)
+		{
+					return true;
+		}
+		return false;
 	}
 }
