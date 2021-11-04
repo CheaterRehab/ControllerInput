@@ -1,7 +1,7 @@
 # ControllerInput
 Controller input for pasted cheats
 
-Just Call do
+Just Call
 
 if(Controller::IsPressingRightTrigger())
 {
